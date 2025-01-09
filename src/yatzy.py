@@ -90,6 +90,7 @@ class Yatzy:
                 total += n
         return total
 
+    '''
     @staticmethod
     def threes(d1, d2, d3, d4, d5):
         s = 0
@@ -104,6 +105,16 @@ class Yatzy:
         if (d5 == 3):
             s += 3
         return s
+    '''
+
+    @staticmethod
+    def threes(d1, d2, d3, d4, d5):
+        dices = (d1, d2, d3, d4, d5)
+        total = 0
+        for n in dices:
+            if n == 3:
+                total += n
+        return total
 
     def __init__(self, d1=0, d2=0, d3=0, d4=0, _5=0):
         self.dice = [0] * 5
