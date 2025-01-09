@@ -1,5 +1,6 @@
 class Yatzy:
 
+    '''
     @staticmethod
     def chance(d1, d2, d3, d4, d5):
         total = 0
@@ -8,6 +9,14 @@ class Yatzy:
         total += d3
         total += d4
         total += d5
+        return total
+    '''
+    @staticmethod
+    def chance(d1, d2, d3, d4, d5):
+        total = 0
+        points = (d1, d2, d3, d4, d5)
+        for n in points:
+            total += n
         return total
 
     @staticmethod
