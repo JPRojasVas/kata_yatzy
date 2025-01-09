@@ -31,9 +31,8 @@ class Yatzy:
         return 0
     '''
     @staticmethod
-    def yatzy(d1, d2, d3, d4, d5):
-        dice = (d1, d2, d3, d4, d5)
-        if d1 == d2 == d3 == d4 == d5:
+    def yatzy(dice):
+        if all(valor == dice[0] for valor in dice):
             return Yatzy.FIFTY
         return Yatzy.ZERO
 
