@@ -27,8 +27,10 @@ def test_yatzy():
     # El codigo para iterar sobre dice es muy complejo
     # El algoritmo para averiguar si todos los dados son iguales
     # es muy complejo
-    assert 50 == Yatzy.yatzy(1, 1, 1, 1, 1)
-    assert 0 == Yatzy.yatzy(1, 1, 1, 2, 1)
+    dice1 = (1, 1, 1, 1, 1)
+    dice2 = (1, 1, 1, 2, 1)
+    assert 50 == Yatzy.yatzy(dice1)
+    assert 0 == Yatzy.yatzy(dice2)
 
 
 # Ones, Twos, Threes, Fours, Fives, Sixes:
@@ -130,11 +132,11 @@ def test_pair():
     # El algoritmo del metodo no es optimo, es complicado e ilegible.
     # La abstraccion, el nombre del metodo, no es adecuada
     # puesto que la categoria se llama pair.
-    assert 8 == Yatzy.pair(3, 3, 3, 4, 4)
-    assert 12 == Yatzy.pair(1, 1, 6, 2, 6)
-    assert 6 == Yatzy.pair(3, 3, 3, 4, 1)
-    assert 6 == Yatzy.pair(3, 3, 3, 3, 1)
-    assert 0 == Yatzy.pair(1, 2, 3, 4, 5)
+    assert 8 == Yatzy.score_pair(3, 3, 3, 4, 4)
+    assert 12 == Yatzy.score_pair(1, 1, 6, 2, 6)
+    assert 0 == Yatzy.score_pair(3, 3, 3, 4, 1)
+    assert 0 == Yatzy.score_pair(3, 3, 3, 3, 1)
+    assert 0 == Yatzy.score_pair(1, 2, 3, 4, 5)
 
 @pytest.mark.pairs
 def test_two_pairs():
@@ -148,11 +150,11 @@ def test_two_pairs():
     # Mantengo notacion snake_case
     # El algoritmo del metodo no es optimo, es complicado e ilegible.
 
-    assert 8 == Yatzy.two_pairs(1, 1, 2, 3, 3)
-    assert 0 == Yatzy.two_pairs(1, 1, 2, 3, 4)
-    assert 6 == Yatzy.two_pairs(1, 1, 2, 2, 2)
-    assert 0 == Yatzy.two_pairs(1, 2, 3, 4, 5)
-    assert 0 == Yatzy.two_pairs(4, 4, 4, 4, 5)
+    assert 8 == Yatzy.two_pair(1, 1, 2, 3, 3)
+    assert 0 == Yatzy.two_pair(1, 1, 2, 3, 4)
+    assert 6 == Yatzy.two_pair(1, 1, 2, 2, 2)
+    assert 0 == Yatzy.two_pair(1, 2, 3, 4, 5)
+    assert 0 == Yatzy.two_pair(4, 4, 4, 4, 5)
 
 
 # Three of a kind:
@@ -191,11 +193,11 @@ def test_four_of_a_kind():
 
 @pytest.mark.small
 def test_small_straight():
-    assert 15 == Yatzy.small_straight(1, 2, 3, 4, 5)
-    assert 0 == Yatzy.small_straight(2, 3, 4, 5, 6)
-    assert 0 == Yatzy.small_straight(1, 3, 4, 5, 5)
-    assert 0 == Yatzy.small_straight(6, 6, 6, 6, 6)
-    assert 0 == Yatzy.small_straight(1, 2, 3, 4, 6)
+    assert 15 == Yatzy.smallStraight(1, 2, 3, 4, 5)
+    assert 0 == Yatzy.smallStraight(2, 3, 4, 5, 6)
+    assert 0 == Yatzy.smallStraight(1, 3, 4, 5, 5)
+    assert 0 == Yatzy.smallStraight(6, 6, 6, 6, 6)
+    assert 0 == Yatzy.smallStraight(1, 2, 3, 4, 6)
 
 
 # Large straight:
@@ -208,11 +210,11 @@ def test_small_straight():
 
 @pytest.mark.large
 def test_large_straight():
-    assert 20 == Yatzy.large_straight(2, 3, 4, 5, 6)
-    assert 0 == Yatzy.large_straight(1, 2, 3, 4, 5)
-    assert 0 == Yatzy.large_straight(1, 3, 4, 5, 5)
-    assert 0 == Yatzy.large_straight(6, 6, 6, 6, 6)
-    assert 0 == Yatzy.large_straight(1, 2, 3, 4, 6)
+    assert 20 == Yatzy.largeStraight(2, 3, 4, 5, 6)
+    assert 0 == Yatzy.largeStraight(1, 2, 3, 4, 5)
+    assert 0 == Yatzy.largeStraight(1, 3, 4, 5, 5)
+    assert 0 == Yatzy.largeStraight(6, 6, 6, 6, 6)
+    assert 0 == Yatzy.largeStraight(1, 2, 3, 4, 6)
 
 
 # Full house:
