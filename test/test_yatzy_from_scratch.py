@@ -27,10 +27,8 @@ def test_yatzy():
     # El codigo para iterar sobre dice es muy complejo
     # El algoritmo para averiguar si todos los dados son iguales
     # es muy complejo
-    dice1 = (1, 1, 1, 1, 1)
-    dice2 = (1, 1, 1, 2, 1)
-    assert 50 == Yatzy.yatzy(dice1)
-    assert 0 == Yatzy.yatzy(dice2)
+    assert 50 == Yatzy.yatzy(1, 1, 1, 1, 1)
+    assert 0 == Yatzy.yatzy(1, 1, 1, 2, 1)
 
 
 # Ones, Twos, Threes, Fours, Fives, Sixes:
