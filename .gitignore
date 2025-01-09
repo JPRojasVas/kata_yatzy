@@ -1,0 +1,19 @@
+# VSCode configuration files
+.vscode/
+
+# Cache files
+.cache/
+
+# Python virtual environment
+venv/
+# Python cache files
+__pycache__/
+
+# Pytest cache
+.pytest_cache/
+
+# Personal notes directory
+doc/
+
+# Coverage reports
+.coverage

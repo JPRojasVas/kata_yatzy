@@ -2,6 +2,7 @@ class Yatzy:
 
     ZERO = 0
     FIFTY = 50
+    
 
     '''
     @staticmethod
@@ -36,7 +37,7 @@ class Yatzy:
             return Yatzy.FIFTY
         return Yatzy.ZERO
 
-
+    '''
     @staticmethod
     def ones(d1, d2, d3, d4, d5):
         sum = 0
@@ -52,6 +53,17 @@ class Yatzy:
             sum += 1
 
         return sum
+    '''
+
+    @staticmethod
+    def ones(d1, d2, d3, d4, d5):
+        dices = (d1, d2, d3, d4, d5)
+        total = 0
+        for n in dices:
+            if n == 1:
+                total += n
+        return total
+
 
     @staticmethod
     def twos(d1, d2, d3, d4, d5):
