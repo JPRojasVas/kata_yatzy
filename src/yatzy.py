@@ -64,7 +64,7 @@ class Yatzy:
                 total += n
         return total
 
-
+    '''
     @staticmethod
     def twos(d1, d2, d3, d4, d5):
         sum = 0
@@ -79,6 +79,16 @@ class Yatzy:
         if (d5 == 2):
             sum += 2
         return sum
+    '''
+
+    @staticmethod
+    def twos(d1, d2, d3, d4, d5):
+        dices = (d1, d2, d3, d4, d5)
+        total = 0
+        for n in dices:
+            if n == 2:
+                total += n
+        return total
 
     @staticmethod
     def threes(d1, d2, d3, d4, d5):
