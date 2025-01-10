@@ -80,11 +80,12 @@ def test_threes():
 # anteriores de tupla a lista <= no es necesario:
 # ya que son estaticos y no emplean un objeto Yatzy
 
+'''
 def test_constructor():
     tirada = Yatzy(1, 1, 1, 1, 1)
     for dado in tirada.dice:
         assert 1 == dado
-
+'''
 
 # La refactorizacion de los metodos fours, fives y sixes
 # consiste en simplificar los algoritmos para recorrer
@@ -97,31 +98,31 @@ def inyector():
     return tirada
 
 @pytest.mark.fours
-def test_fours(inyector):
+def test_fours():
     '''
     The player scores the sum of the dice that reads four
     '''
     # es necesario un objeto de tipo Yatzy ya creado
-    valorEsperado = 8
     # No puedo testear con fixtures = inyeccion de dependencias
     # los metodos estaticos como chance()
-    assert valorEsperado == inyector.fours()
+    assert 12 == Yatzy.fours(1, 4, 4, 4, 1)
+    assert 0 == Yatzy.fours(3, 3, 3, 1, 5)
 
 @pytest.mark.fives
-def test_fives(inyector):
+def test_fives():
     '''
     The player scores the sum of the dice that reads five
     '''
-    valorEsperado = 10
-    assert valorEsperado == inyector.fives()
+    assert 0 == Yatzy.fives(1, 1, 1, 1, 1)
+    assert 10 == Yatzy.fives(3, 5, 3, 1, 5)
 
 @pytest.mark.sixes
-def test_sixes(inyector):
+def test_sixes():
     '''
     The player scores the sum of the dice that reads six
     '''
-    valorEsperado = 6
-    assert valorEsperado == inyector.sixes()
+    assert 0 == Yatzy.sixes(1, 1, 1, 1, 1)
+    assert 12 == Yatzy.sixes(3, 6, 3, 6, 5)
 
 @pytest.mark.pair
 def test_pair():

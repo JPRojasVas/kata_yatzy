@@ -116,6 +116,7 @@ class Yatzy:
                 total += n
         return total
 
+    '''
     def __init__(self, d1=0, d2=0, d3=0, d4=0, _5=0):
         self.dice = [0] * 5
         self.dice[0] = d1
@@ -123,28 +124,34 @@ class Yatzy:
         self.dice[2] = d3
         self.dice[3] = d4
         self.dice[4] = _5
+    '''
 
-    def fours(self):
-        sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4):
-                sum += 4
-        return sum
+    @staticmethod
+    def fours(d1, d2, d3, d4, d5):
+        dices = (d1, d2, d3, d4, d5)
+        total = 0
+        for n in dices:
+            if n == 4:
+                total += n
+        return total
 
-    def fives(self):
-        s = 0
-        i = 0
-        for i in range(len(self.dice)):
-            if (self.dice[i] == 5):
-                s = s + 5
-        return s
+    @staticmethod
+    def fives(d1, d2, d3, d4, d5):
+        dices = (d1, d2, d3, d4, d5)
+        total = 0
+        for n in dices:
+            if n == 5:
+                total += n
+        return total
 
-    def sixes(self):
-        sum = 0
-        for at in range(len(self.dice)):
-            if (self.dice[at] == 6):
-                sum = sum + 6
-        return sum
+    @staticmethod
+    def sixes(d1, d2, d3, d4, d5):
+        dices = (d1, d2, d3, d4, d5)
+        total = 0
+        for n in dices:
+            if n == 6:
+                total += n
+        return total
 
     @staticmethod
     def score_pair(d1, d2, d3, d4, d5):
