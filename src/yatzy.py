@@ -144,8 +144,7 @@ class Yatzy:
                 total += n
         return total
 
-
-
+    '''
     @staticmethod
     def score_pair(d1, d2, d3, d4, d5):
         counts = [0] * 6
@@ -159,6 +158,16 @@ class Yatzy:
             if (counts[6 - at - 1] == 2):
                 return (6 - at) * 2
         return 0
+    '''
+
+    def pair(*dice):
+        numbers = []
+        for n in range(1, 7):
+            if dice.count(n) == 2:
+                numbers.append(n)
+        if numbers == []:
+            return 0
+        return max(numbers) * 2
 
     @staticmethod
     def two_pair(d1, d2, d3, d4, d5):
