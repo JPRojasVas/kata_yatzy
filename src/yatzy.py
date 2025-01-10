@@ -274,7 +274,7 @@ class Yatzy:
             return 15
         return 0
         
-
+    '''
     @staticmethod
     def largeStraight(d1, d2, d3, d4, d5):
         tallies = [0] * 6
@@ -290,7 +290,14 @@ class Yatzy:
                 and tallies[5] == 1):
             return 20
         return 0
-
+    '''
+    @staticmethod
+    def large_straight(*dice):
+        numbers = sorted(dice)
+        if sorted(numbers) == [2, 3, 4, 5, 6]:
+            return 20
+        return 0
+        
     @staticmethod
     def fullHouse(d1, d2, d3, d4, d5):
         tallies = []
