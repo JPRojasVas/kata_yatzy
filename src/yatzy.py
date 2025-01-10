@@ -31,8 +31,8 @@ class Yatzy:
         return 0
     '''
     @staticmethod
-    def yatzy(dice):
-        return Yatzy.FIFTY if all(dado == dice[0] for dado in dice) else Yatzy.ZERO
+    def yatzy(*dice):
+        return Yatzy.FIFTY if len(set(dice)) == 1 else Yatzy.ZERO
 
     '''
     @staticmethod
