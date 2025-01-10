@@ -249,7 +249,7 @@ class Yatzy:
             return 0
         return max(numbers) * 4
 
-
+    '''
     @staticmethod
     def smallStraight(d1, d2, d3, d4, d5):
         tallies = [0] * 6
@@ -265,6 +265,15 @@ class Yatzy:
                 tallies[4] == 1):
             return 15
         return 0
+    '''
+
+    @staticmethod
+    def small_straight(*dice):
+        numbers = sorted(dice)
+        if sorted(numbers) == [1, 2, 3, 4, 5]:
+            return 15
+        return 0
+        
 
     @staticmethod
     def largeStraight(d1, d2, d3, d4, d5):

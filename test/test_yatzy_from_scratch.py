@@ -192,11 +192,11 @@ def test_four_of_a_kind():
 
 @pytest.mark.small
 def test_small_straight():
-    assert 15 == Yatzy.smallStraight(1, 2, 3, 4, 5)
-    assert 0 == Yatzy.smallStraight(2, 3, 4, 5, 6)
-    assert 0 == Yatzy.smallStraight(1, 3, 4, 5, 5)
-    assert 0 == Yatzy.smallStraight(6, 6, 6, 6, 6)
-    assert 0 == Yatzy.smallStraight(1, 2, 3, 4, 6)
+    assert 15 == Yatzy.small_straight(1, 2, 3, 4, 5)
+    assert 0 == Yatzy.small_straight(2, 3, 4, 5, 6)
+    assert 0 == Yatzy.small_straight(1, 3, 4, 5, 5)
+    assert 0 == Yatzy.small_straight(6, 6, 6, 6, 6)
+    assert 0 == Yatzy.small_straight(1, 2, 3, 4, 6)
 
 
 # Large straight:
