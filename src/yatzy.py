@@ -159,7 +159,7 @@ class Yatzy:
                 return (6 - at) * 2
         return 0
     '''
-
+    @staticmethod
     def pair(*dice):
         numbers = []
         for n in range(1, 7):
@@ -190,7 +190,7 @@ class Yatzy:
         else:
             return 0
     '''
-
+    @staticmethod
     def two_pair(*dice):
         numbers = []
         for n in range(1, 7):
@@ -215,7 +215,7 @@ class Yatzy:
                 return (i + 1) * 3
         return 0
     '''
-
+    @staticmethod
     def three_of_a_kind(*dice):
         numbers = []
         for n in range(1, 7):
@@ -225,6 +225,7 @@ class Yatzy:
             return 0
         return max(numbers) * 3
 
+    '''
     @staticmethod
     def four_of_a_kind(_1, _2, d3, d4, d5):
         tallies = [0] * 6
@@ -237,6 +238,17 @@ class Yatzy:
             if (tallies[i] >= 4):
                 return (i + 1) * 4
         return 0
+    '''
+    @staticmethod
+    def four_of_a_kind(*dice):
+        numbers = []
+        for n in range(1, 7):
+            if dice.count(n) >= 4:
+                numbers.append(n)
+        if numbers == []:
+            return 0
+        return max(numbers) * 4
+
 
     @staticmethod
     def smallStraight(d1, d2, d3, d4, d5):
