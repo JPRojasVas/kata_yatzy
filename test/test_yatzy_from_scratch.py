@@ -221,8 +221,8 @@ def test_large_straight():
 # player scores the sum of all the dice.
 
 @pytest.mark.full
-def test_fullHouse():
-    assert 8 == Yatzy.fullHouse(1, 1, 2, 2, 2)
-    assert 0 == Yatzy.fullHouse(2, 2, 3, 3, 4)
-    assert 0 == Yatzy.fullHouse(4, 4, 4, 4, 4)
-    assert 0 == Yatzy.fullHouse(4, 4, 4, 1, 2)
+def test_full_house():
+    assert 8 == Yatzy.full_house(1, 1, 2, 2, 2)
+    assert 0 == Yatzy.full_house(2, 2, 3, 3, 4)
+    assert 0 == Yatzy.full_house(4, 4, 4, 4, 4)
+    assert 0 == Yatzy.full_house(4, 4, 4, 1, 2)

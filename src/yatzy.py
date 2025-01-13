@@ -298,6 +298,7 @@ class Yatzy:
             return 20
         return 0
         
+    '''
     @staticmethod
     def fullHouse(d1, d2, d3, d4, d5):
         tallies = []
@@ -326,5 +327,22 @@ class Yatzy:
 
         if (_2 and _3):
             return _2_at * 2 + _3_at * 3
+        else:
+            return 0
+    '''
+
+    @staticmethod
+    def full_house(*dice):
+        unique_numbers = set(dice)
+        pair = 0
+        three_of_a_kind = 0
+        for number in unique_numbers:
+            count = dice.count(number)
+            if count == 2:
+                pair = number * 2
+            elif count == 3:
+                three_of_a_kind = number * 3
+        if pair and three_of_a_kind:
+            return pair + three_of_a_kind
         else:
             return 0
